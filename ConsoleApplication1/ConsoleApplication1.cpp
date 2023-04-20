@@ -125,4 +125,5 @@ void StringTest()
 {
 	string name = "Vibas";
 	cout << "String name  = " << name << endl;
+
 }
