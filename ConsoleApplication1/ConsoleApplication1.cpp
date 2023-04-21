@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cmath>
 using namespace std;
 
 void PrintHelloWorld();
@@ -7,6 +8,8 @@ void Constants();
 void UserInput();
 void Operators();
 void StringTest();
+void MathTest();
+void ArraysTest();
 
 int main()
 {
@@ -26,7 +29,13 @@ int main()
 	//Operators();
 
 	// Strings
-	StringTest();
+	//StringTest();
+
+	// Maths
+	//MathTest();
+
+	// Arrays
+	ArraysTest();
 
 	return 0;
 }
@@ -123,7 +132,66 @@ void Operators()
 
 void StringTest()
 {
-	string name = "Vibas";
-	cout << "String name  = " << name << endl;
+	string firstName = "Vibas";
+	string lastName = "Behera";
 
+	cout << "First name  = " << firstName << " Last Name = " << lastName << endl;
+
+	// Concatenation
+	string fullName = firstName + " " + lastName;
+	cout << "Concatenation : Full Name " << fullName << endl;
+
+	// Append
+	cout << "Append : " << firstName.append(lastName) << endl;
+	cout << "Value of first name after appending last name " << firstName << endl;
+
+	// String Length
+	cout << "Length of full name = " << fullName.length() << endl;
+	// String Size same as length
+	cout << "Size of full name = " << fullName.size() << endl;
+
+	// Index of string 
+	cout << "First character of full name = " << fullName[0] << endl;
+	cout << "Change first character to  : ";
+	char firstChar;
+	cin >> firstChar;
+	fullName[0] = firstChar;
+	cout << "After changing the first character, full name becomes = " << fullName << endl;
+
+	// Special Characters \t \n \" etc
+	string sentence = "Hello, my name is \"Vibas\"\t Thanks. \n";
+	cout << sentence;
+
+	// User input string 
+	string f_name, l_name;
+	cout << "Enter First Name : ";
+	cin >> f_name;
+	cout << "Enter Second Name : ";
+	cin >> l_name;
+	fullName = f_name + " " + l_name;
+	cout << "Full Name : " << fullName << endl;
+}
+
+void MathTest()
+{
+	// Max
+	cout << "Max between 5 & 10 : " << max(5, 10) << endl;
+	cout << "Min between 5 & 10 : " << min(5, 10) << endl;
+	
+	// SQRT  
+	cout << "Sqrt of 64 : " << sqrt(64) << endl;
+	cout << "Round 2.6 = " << round(2.6) << endl;
+	cout << "Ceil 2.6 = " << ceil(2.6) << endl;
+	cout << "floor 2.6 = " << floor(2.6) << endl;
+
+	cout << "Log 2 " << log(16) <<endl ;
+}
+
+void ArraysTest()
+{
+	string daysInWeak[7] = { "Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+	for (int i = 0; i < 7; i++)
+	{
+		cout << daysInWeak[i] << endl;
+	}
 }
