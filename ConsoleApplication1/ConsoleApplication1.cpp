@@ -40,10 +40,10 @@ int main()
 	//ConditionTest();
 
 	// Loops
-	LoopTest();
+	//LoopTest();
 
 	// Arrays
-	//ArraysTest();
+	ArraysTest();
 
 	return 0;
 }
@@ -314,14 +314,23 @@ void LoopTest()
 void ArraysTest()
 {
 	string daysInWeak[7] = { "Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-	for (int i = 0; i < 7; i++)
+
+	// Get array length
+	cout << "daysInWeak length = " << sizeof(daysInWeak) / sizeof(string) << endl;
+
+	for (string s : daysInWeak)
 	{
-		cout << daysInWeak[i] << endl;
+		cout << s << endl;
 	}
 
 	int numbers[] = { 1,2,3,4,5,6,7,8,9,10 };
+	// Get array length
+	cout << "numbers length = " << sizeof(numbers) / sizeof(int) << endl;
 	for (int i = 0; i < 10; i++)
 	{
 		cout << numbers[i] << endl;
 	}
+
+	// ========= Multidimensional Array ==============//
+
 }
