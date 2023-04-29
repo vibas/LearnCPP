@@ -10,6 +10,7 @@ void Operators();
 void StringTest();
 void MathTest();
 void ArraysTest();
+void ConditionTest();
 
 int main()
 {
@@ -34,8 +35,11 @@ int main()
 	// Maths
 	//MathTest();
 
+	// Conditions
+	ConditionTest();
+
 	// Arrays
-	ArraysTest();
+	//ArraysTest();
 
 	return 0;
 }
@@ -187,11 +191,76 @@ void MathTest()
 	cout << "Log 2 " << log(16) <<endl ;
 }
 
+void ConditionTest() 
+{
+	// Boolean
+	int a = 5, b = 10;
+	bool is_a_greaterThan_b = a > b;
+	bool is_a_lessThan_b = a < b;
+	bool is_a_equalTo_b = a == b;
+	cout << "a = " << a << " b = " << b << " a>b = " << (is_a_greaterThan_b ? "TRUE" : "FALSE") << endl;
+	cout << "a = " << a << " b = " << b << " a<b = " << (is_a_lessThan_b ? "TRUE" : "FALSE") << endl;
+	cout << "a = " << a << " b = " << b << " a==b = " << (is_a_equalTo_b ? "TRUE" : "FALSE") << endl;
+
+	// if statement
+	if (a > b)
+	{
+		cout << a << " is greater than " << b << endl;
+	}
+	else if (a < b)
+	{
+		cout << a << " is less than " << b << endl;
+	}
+	else
+	{
+		cout << a << " is equal to " << b << endl;
+	}
+
+	// Switch statement
+	int day = 5;
+	string day_str = "";
+	switch (day)
+	{
+	case 1:
+		day_str = "Monday";
+		break;
+	case 2:
+		day_str = "Tuesday";
+		break;
+	case 3:
+		day_str = "Wednesday";
+		break;
+	case 4:
+		day_str = "Thursday";
+		break;
+	case 5:
+		day_str = "Friday";
+		break;
+	case 6:
+		day_str = "Saturday";
+		break;
+	case 7:
+		day_str = "Sunday";
+		break;
+	default:
+		day_str = "Good Day";
+		break;
+	}
+
+	cout << "Day is " << day_str << endl;
+}
+
 void ArraysTest()
 {
 	string daysInWeak[7] = { "Sunday", "Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 	for (int i = 0; i < 7; i++)
 	{
 		cout << daysInWeak[i] << endl;
+	}
+
+	int numbers[] = { 1,2,3,4,5,6,7,8,9,10 };
+	for (int i = 0; i < 10; i++)
+	{
+		cout << numbers[i] << endl;
 	}
 }
