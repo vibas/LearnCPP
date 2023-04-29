@@ -11,6 +11,7 @@ void StringTest();
 void MathTest();
 void ArraysTest();
 void ConditionTest();
+void LoopTest();
 
 int main()
 {
@@ -36,7 +37,10 @@ int main()
 	//MathTest();
 
 	// Conditions
-	ConditionTest();
+	//ConditionTest();
+
+	// Loops
+	LoopTest();
 
 	// Arrays
 	//ArraysTest();
@@ -248,6 +252,63 @@ void ConditionTest()
 	}
 
 	cout << "Day is " << day_str << endl;
+}
+
+void LoopTest()
+{
+	// Simple loop
+	for (int i = 0; i < 10; i++)
+	{
+		cout << i+1 << endl;
+	}
+	cout << endl;
+
+	int k = 0;
+	int max = 10;
+	// Nested loop to print Pyramid number
+	for (int i = 1; i < max; i++)
+	{	
+		if (i > max/2)
+		{
+			k+=2;
+		}
+		for (int j = 1; j < i-k; j++)
+		{
+			cout << j << " ";
+		}
+		cout << endl;
+	}
+
+	// While loop
+	int num = 0;
+	while (num < 5)
+	{
+		cout << "HELLO" << endl;
+		num++;
+	}
+
+	// do-while loop
+	int num1 = 0;
+	do
+	{
+		cout << "HI" << endl;
+		num1++;
+	} while (num1<5);
+
+	// Continue to print odd numbers up to 20
+	// Break the loop if number is more than 10
+	for (int  i = 0; i < 20; i++)
+	{
+		if (i % 2 == 0)
+		{
+			continue;
+		}
+		if (i > 10)
+		{
+			break;
+		}
+		cout << i << endl;
+	}
 }
 
 void ArraysTest()
