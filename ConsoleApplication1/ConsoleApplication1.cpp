@@ -23,6 +23,7 @@ void LoopTest();
 void PrintShips(bool ships[4][4]);
 void StructTest();
 void PrintStudent(Student student);
+void ReferenceTest();
 
 int main()
 {
@@ -57,7 +58,10 @@ int main()
 	//ArraysTest();
 
 	// Struct Test
-	StructTest();
+	//StructTest();
+
+	// Reference Test
+	ReferenceTest();
 
 	return 0;
 }
@@ -506,4 +510,13 @@ void PrintStudent(Student student)
 	cout << "NAME : " << student.studentName << endl;
 	cout << "GENDER : " << student.gender << endl;
 	cout << "ADDRESS : " << student.address << endl;
+}
+
+void ReferenceTest()
+{
+	string food = "Pizza";
+	string &meal = food;
+
+	cout << food << "\t" << meal << endl;
+	cout << &meal << endl;
 }
