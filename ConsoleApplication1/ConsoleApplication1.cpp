@@ -2,6 +2,14 @@
 #include<cmath>
 using namespace std;
 
+struct Student
+{
+	int studentID;
+	string studentName;
+	string gender;
+	string address;
+};
+
 void PrintHelloWorld();
 void Variables();
 void Constants();
@@ -13,6 +21,8 @@ void ArraysTest();
 void ConditionTest();
 void LoopTest();
 void PrintShips(bool ships[4][4]);
+void StructTest();
+void PrintStudent(Student student);
 
 int main()
 {
@@ -44,7 +54,10 @@ int main()
 	//LoopTest();
 
 	// Arrays
-	ArraysTest();
+	//ArraysTest();
+
+	// Struct Test
+	StructTest();
 
 	return 0;
 }
@@ -467,4 +480,30 @@ void PrintShips(bool ships[4][4])
 		}
 		cout << endl;
 	}
+}
+
+void StructTest()
+{
+	Student s1,s2;
+	s1.studentID = 1;
+	s1.studentName = "Rohan";
+	s1.gender = "Male";
+	s1.address = "Pune";
+
+	s2.studentID = 2;
+	s2.studentName = "Neha";
+	s2.gender = "Female";
+	s2.address = "Mumbai";
+
+	PrintStudent(s1);
+	PrintStudent(s2);
+}
+
+void PrintStudent(Student student)
+{
+	cout << "---- Student Details ----" << endl;
+	cout << "ID : " << student.studentID << endl;
+	cout << "NAME : " << student.studentName << endl;
+	cout << "GENDER : " << student.gender << endl;
+	cout << "ADDRESS : " << student.address << endl;
 }
