@@ -24,6 +24,7 @@ void PrintShips(bool ships[4][4]);
 void StructTest();
 void PrintStudent(Student student);
 void ReferenceTest();
+void PointerTest();
 
 int main()
 {
@@ -61,7 +62,10 @@ int main()
 	//StructTest();
 
 	// Reference Test
-	ReferenceTest();
+	//ReferenceTest();
+
+	// Pointer Test
+	PointerTest();
 
 	return 0;
 }
@@ -519,4 +523,25 @@ void ReferenceTest()
 
 	cout << food << "\t" << meal << endl;
 	cout << &meal << endl;
+}
+
+void PointerTest()
+{
+	string food = "Pizza";
+	cout << "food value = " << food << " food address  = " << &food << endl;
+
+	string* ptr = &food;
+	
+	/*Note that the* sign can be confusing here, as it does two different things in our code :
+
+	When used in declaration(string * ptr), it creates a pointer variable.
+	When not used in declaration, it act as a dereference operator.*/
+
+	cout << "address : ptr = " << ptr << " Value : *ptr = " << *ptr << endl;
+
+	// Modify pointer
+	*ptr = "Hamburger";
+	cout << "*ptr changed!" << endl;
+	cout << "address : ptr = " << ptr << " Value : *ptr = " << *ptr << endl;
+	cout << "food value = " << food << endl;
 }
