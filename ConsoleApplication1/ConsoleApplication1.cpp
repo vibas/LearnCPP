@@ -26,6 +26,12 @@ void PrintStudent(Student student);
 void ReferenceTest();
 void PointerTest();
 
+void FunctionTest();
+void FunctionWithParamTest(string name);
+void FunctionWithDefaultParam(int a = 5, int b = 5);
+void SwapNumbers(int& a, int& b);
+void PrintArray(int array_elements[], int size);
+
 int main()
 {
 	// Print Hello World
@@ -65,7 +71,10 @@ int main()
 	//ReferenceTest();
 
 	// Pointer Test
-	PointerTest();
+	//PointerTest();
+
+	// Function Test
+	FunctionTest();
 
 	return 0;
 }
@@ -544,4 +553,50 @@ void PointerTest()
 	cout << "*ptr changed!" << endl;
 	cout << "address : ptr = " << ptr << " Value : *ptr = " << *ptr << endl;
 	cout << "food value = " << food << endl;
+}
+
+void FunctionTest()
+{
+	cout << "Enter your name";
+	string name = "";
+	cin >> name;
+	FunctionWithParamTest(name);
+	FunctionWithDefaultParam(10,10);
+	
+	int a = 5, b = 10;
+
+	cout << "before swap" << endl;
+	cout << "a = " << a << " b = " << b << endl;
+	cout << "after swap" << endl;
+	SwapNumbers(a, b);
+	cout << "a = " << a << " b = " << b << endl;
+
+	int numbers[] = { 1,2,3,4,5,6,7,8 };
+	PrintArray(numbers,sizeof(numbers) / sizeof(int));
+}
+
+void FunctionWithParamTest(string name)
+{
+	cout << "Printing the parameter name = " << name << endl;
+}
+
+void FunctionWithDefaultParam(int a, int b)
+{
+	cout << "Function with default param a+b = " << a + b << endl;
+}
+
+void SwapNumbers(int& a, int& b)
+{
+	int temp = a;
+	a = b;
+	b = temp;
+}
+
+void PrintArray(int array_elements[], int size)
+{
+	cout << "Print Array" << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << array_elements[i] << endl;
+	}
 }
