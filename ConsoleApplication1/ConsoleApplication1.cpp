@@ -31,6 +31,10 @@ void FunctionWithParamTest(string name);
 void FunctionWithDefaultParam(int a = 5, int b = 5);
 void SwapNumbers(int& a, int& b);
 void PrintArray(int array_elements[], int size);
+int SumNumbers(int a, int b);
+double SumNumbers(double a, double b);
+int Recursion_Factorial(int n);
+void Recursion_Febanacea(int max, int a = 0, int b = 1);
 
 int main()
 {
@@ -573,6 +577,20 @@ void FunctionTest()
 
 	int numbers[] = { 1,2,3,4,5,6,7,8 };
 	PrintArray(numbers,sizeof(numbers) / sizeof(int));
+
+	int sumIntResult = SumNumbers(5, 6);
+	double sumFloatResult = SumNumbers(1.0012, 3.9);
+
+	cout << "sumIntResult = " << sumIntResult << " sumFloatResult = " << sumFloatResult << endl;
+
+	int n = 5;
+	int nFactorial = Recursion_Factorial(n);
+	if (nFactorial > 0)
+	{
+		cout << "Factorial of " << n << " = " << nFactorial << endl;
+	}
+
+	Recursion_Febanacea(20);
 }
 
 void FunctionWithParamTest(string name)
@@ -598,5 +616,40 @@ void PrintArray(int array_elements[], int size)
 	for (int i = 0; i < size; i++)
 	{
 		cout << array_elements[i] << endl;
+	}
+}
+
+int SumNumbers(int a, int b)
+{
+	return a + b;
+}
+
+double SumNumbers(double a, double b)
+{
+	return a + b;
+}
+
+int Recursion_Factorial(int n)
+{
+	if (n < 0)
+	{
+		cout << "You have passed -ve number. Please pass +ve number for factorial!" << endl;
+		return 0;
+	}
+
+	if (n == 0)
+		return 1;
+
+	return n * Recursion_Factorial(n - 1);
+}
+
+void Recursion_Febanacea(int max, int a, int b)
+{
+	int c = a + b;
+	
+	if (c < max)
+	{
+		cout << (a==0 ? "0 1 " : "") << c << " ";
+		Recursion_Febanacea(max, b, c);
 	}
 }
