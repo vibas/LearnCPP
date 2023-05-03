@@ -36,6 +36,37 @@ double SumNumbers(double a, double b);
 int Recursion_Factorial(int n);
 void Recursion_Febanacea(int max, int a = 0, int b = 1);
 
+void ClassObjectTest();
+
+class StudentClass
+{
+private:
+	int StudentID;
+	string StudentName;
+	string StudentAddress;
+
+public:
+	StudentClass(int studentID, string studentName);
+	void SetStudentAddress(string address);
+	void PrintStudentInfo()
+	{
+		cout << "Student ID = " << StudentID << endl;
+		cout << "Student Name = " << StudentName << endl;
+		cout << "Student Address = " << StudentAddress << endl;
+	}
+};
+
+StudentClass::StudentClass(int studentID, string studentName)
+{
+	StudentID = studentID;
+	StudentName = studentName;
+}
+
+void StudentClass::SetStudentAddress(string address)
+{
+	StudentAddress = address;
+}
+
 int main()
 {
 	// Print Hello World
@@ -78,7 +109,10 @@ int main()
 	//PointerTest();
 
 	// Function Test
-	FunctionTest();
+	//FunctionTest();
+
+	// Class Object Test
+	ClassObjectTest();
 
 	return 0;
 }
@@ -653,3 +687,21 @@ void Recursion_Febanacea(int max, int a, int b)
 		Recursion_Febanacea(max, b, c);
 	}
 }
+
+void ClassObjectTest()
+{
+	StudentClass student1(1,"Vibas"), student2(2, "Pinky");
+
+	/*student1.StudentID = 1;
+	student1.StudentName = "Vibas";*/
+	student1.SetStudentAddress("Pune");
+
+	/*student2.StudentID = 2;
+	student2.StudentName = "Pinky";*/
+	student2.SetStudentAddress("Mumbai");
+
+	student1.PrintStudentInfo();
+	student2.PrintStudentInfo();
+}
+
+
