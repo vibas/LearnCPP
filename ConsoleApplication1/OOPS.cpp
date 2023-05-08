@@ -45,6 +45,23 @@ void StudentClass::SetStudentAddress(string address)
 
 #pragma region Inheritance
 // ========== Inheritance ======================
+class Owner
+{
+public:
+	void SetCompanyShare(int share)
+	{
+		companyShare = share;
+	}
+
+	int GetTotalShare()
+	{
+		return companyShare;
+	}
+
+private:
+	int companyShare;
+};
+
 class Employee
 {
 public:
@@ -60,22 +77,25 @@ public:
 		Salary = salary;
 	}
 
-	int GetSalary()
-	{
-		return Salary;
-	}
-
 	void PrintEmployeeDetails()
 	{
 		cout << "Employee Details " << endl;
 		cout << "ID : " << ID << " Name : " << Name << " Address : " << Address << endl;
+		if(EmployeeType!="")
+			cout << "Employee Type : " << EmployeeType << endl;
+		if(Designation != "")
+		cout << "Employee Designation : " << Designation << endl;
 	}
 
 private:
 	int ID;
 	string Name;
 	string Address;
+
+protected:
 	int Salary;
+	string EmployeeType;
+	string Designation;
 };
 
 class PermanentEmployee : public Employee
@@ -88,31 +108,137 @@ public:
 
 	int GetSalary()
 	{
-		int baseSalary = Employee :: GetSalary();
-		return baseSalary + Bonus;
+		return Salary + Bonus;
+	}
+
+	void SetEmployeeType(string type)
+	{
+		EmployeeType = type;
 	}
 
 private:
 	int Bonus;
+
+protected:
+	void SetDesignation(string designation)
+	{
+		Designation = designation;
+	}
 };
 
-class ContractualEmployee : public Employee
+class CEO : public PermanentEmployee, public Owner
 {
 public:
-
+	void SetDesignation(string designation)
+	{
+		PermanentEmployee::SetDesignation(designation);
+	}
 
 private:
 
 };
 
+
+
+class ContractualEmployee : public Employee
+{
+public:
+	int GetSalary()
+	{
+		return Salary;
+	}
+
+	void SetEmployeeType(string type)
+	{
+		EmployeeType = type;
+	}
+
+private:
+
+protected:
+	void SetDesignation(string designation)
+	{
+		Designation = designation;
+	}
+
+};
+
+class PermanentManager : public PermanentEmployee
+{
+public:
+	void SetDesignation(string designation)
+	{
+		PermanentEmployee::SetDesignation(designation);
+	}
+
+private:
+
+};
+
+class ContractualManager : public ContractualEmployee
+{
+public:
+	void SetDesignation(string designation)
+	{
+		ContractualEmployee::SetDesignation(designation);
+	}
+
+private:
+
+};
+
+
+
 // =============================================
 #pragma endregion
+
+#pragma region Polymorphism
+class Animal
+{
+public:
+	void CreateSound()
+	{
+		cout << "Animal Sound : NONE" << endl;
+	}
+
+private:
+
+};
+
+class Dog :public Animal
+{
+public:
+	void CreateSound()
+	{
+		cout << "Dog Sound : Bow Bow" << endl;
+	}
+
+private:
+
+};
+
+class Cat :public Animal
+{
+public:
+	void CreateSound()
+	{
+		cout << "Cat Sound : Meaw Meaw" << endl;
+	}
+
+private:
+
+};
+
+
+#pragma endregion
+
 
 void LearnOOPS()
 {
 	// Class Object Test
 	//ClassObjectTest();
-	InheritanceTest();
+	//InheritanceTest();
+	PolymorphismTest();
 }
 
 void ClassObjectTest()
@@ -148,4 +274,46 @@ void InheritanceTest()
 	contractual_employee.SetSalary(5000);
 	contractual_employee.PrintEmployeeDetails();
 	cout << "Total Salary = " << contractual_employee.GetSalary() << endl;
+
+	// ========== MULTILEVEL INHERITANCE ===========//
+	PermanentManager permanent_manager;
+	ContractualManager contractual_manager;
+
+	permanent_manager.SetEmployeeDetails(3, "Lucky", "Bangalore");
+	permanent_manager.SetEmployeeType("Permanent");
+	permanent_manager.SetDesignation("Manager");
+	permanent_manager.SetSalary(50000);
+	permanent_manager.SetBonus(5000);
+	permanent_manager.PrintEmployeeDetails();
+	cout << "Total Salary = " << permanent_manager.GetSalary() << endl;
+
+	contractual_manager.SetEmployeeDetails(4, "Dipti", "Chennai");
+	contractual_manager.SetEmployeeType("Contractual");
+	contractual_manager.SetDesignation("Manager");
+	contractual_manager.SetSalary(30000);
+	contractual_manager.PrintEmployeeDetails();
+	cout << "Total Salary = " << contractual_manager.GetSalary() << endl;
+	
+	// ============= MULTIPLE INHERITANCE ===============
+	CEO ceo;
+	ceo.SetEmployeeDetails(1000, "Mr. V R BEHERA", "Balasore");
+	ceo.SetCompanyShare(50);
+	ceo.SetSalary(100000);
+	ceo.SetBonus(10000);
+	ceo.SetEmployeeType("Permanent");
+	ceo.SetDesignation("CEO");
+	ceo.PrintEmployeeDetails();
+	cout << "Total Salary = " << ceo.GetSalary() << endl;
+	cout << "Total Share = " << ceo.GetTotalShare() <<"%" << endl;
+}
+
+void PolymorphismTest()
+{
+	Animal animal;
+	Dog dog;
+	Cat cat;
+
+	animal.CreateSound();
+	dog.CreateSound();
+	cat.CreateSound();
 }
