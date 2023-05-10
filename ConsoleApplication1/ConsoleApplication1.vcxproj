@@ -141,10 +141,12 @@
   <ItemGroup>
     <ClCompile Include="Basics.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
+    <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="OOPS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basics.h" />
+    <ClInclude Include="FileSystem.h" />
     <ClInclude Include="OOPS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
