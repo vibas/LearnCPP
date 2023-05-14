@@ -38,3 +38,4 @@ int SumNumbers(int a, int b);
 double SumNumbers(double a, double b);
 int Recursion_Factorial(int n);
 void Recursion_Febanacea(int max, int a = 0, int b = 1);
+void ExceptionHandlingTest();
