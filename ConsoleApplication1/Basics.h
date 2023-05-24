@@ -2,6 +2,7 @@
 #include<iostream>
 #include<cmath>
 using namespace std;
+#include<stdarg.h>
 
 void LearnBasics();
 
@@ -39,3 +40,5 @@ double SumNumbers(double a, double b);
 int Recursion_Factorial(int n);
 void Recursion_Febanacea(int max, int a = 0, int b = 1);
 void ExceptionHandlingTest();
+void TestVariadicFunction_AddNumbers(int count,...);
+void TestVariadicFunction_AddNumbers_without_count(int count,...);

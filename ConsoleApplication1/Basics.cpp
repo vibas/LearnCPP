@@ -46,7 +46,11 @@ void LearnBasics()
 	//FunctionTest();
 
 	// Exception Handling Test
-	ExceptionHandlingTest();
+	//ExceptionHandlingTest();
+
+	// Variadic Function Test
+	//TestVariadicFunction_AddNumbers(5,1,2,3,4,5);
+	TestVariadicFunction_AddNumbers_without_count(1, 2, 3, 4, 5,NULL);
 }
 
 void PrintHelloWorld()
@@ -657,4 +661,40 @@ void ExceptionHandlingTest()
 	{
 		cout << "Exception : " << e.what() << endl;
 	}
+
+
+}
+void TestVariadicFunction_AddNumbers(int count, ...)
+{
+	va_list args;
+
+	va_start(args, count);
+	int num = 0;
+	int sum = 0;
+	for (int i = 0; i < count; i++)
+	{
+		num = va_arg(args, int);
+		cout << num << ((i < count - 1) ? " + " : "");
+		sum += num;
+	}
+	cout << " = " << sum << endl;
+	va_end(args);
+}
+
+void TestVariadicFunction_AddNumbers_without_count(int count, ...)
+{
+	va_list args;
+	va_start(args, count);
+	
+	int sum = count; // Here count is treated as first number in the argument which is added to sum
+	cout << sum << " + ";
+	int num = va_arg(args, int); // This line will get first num from args, which is treated as 2nd
+	while (num != NULL)
+	{
+		cout << num << " + ";
+		sum += num;
+		num = va_arg(args, int);
+	}
+	cout << " =  " << sum << endl;
+	va_end(args);
 }
