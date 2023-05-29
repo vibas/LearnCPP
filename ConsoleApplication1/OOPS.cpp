@@ -7,6 +7,9 @@ using namespace std;
 class StudentClass
 {
 	int Age; // Private by default
+	static string schoolName;
+	static string schoolAddress;
+
 private:
 	int StudentID;
 	string StudentName;
@@ -14,7 +17,12 @@ private:
 
 public:
 	StudentClass(int studentID, string studentName);
+	~StudentClass();
 	void SetStudentAddress(string address);
+	static void PrintSchoolInfo()
+	{
+		cout << "School Name = " << schoolName << " Address : " << schoolAddress << endl;
+	}
 
 	void SetStudentAge(int age)
 	{
@@ -30,8 +38,12 @@ public:
 	}
 };
 
+string StudentClass::schoolName = "S R Highschool";
+string StudentClass::schoolAddress = "Odisha";
+
 StudentClass::StudentClass(int studentID, string studentName)
 {
+	cout << "New Student Object Created!" << endl;
 	StudentID = studentID;
 	StudentName = studentName;
 }
@@ -39,6 +51,11 @@ StudentClass::StudentClass(int studentID, string studentName)
 void StudentClass::SetStudentAddress(string address)
 {
 	StudentAddress = address;
+}
+
+StudentClass :: ~StudentClass()
+{
+	cout << "Student Object Destroyed!" << endl;
 }
 // ============================================================================
 #pragma endregion
@@ -236,27 +253,72 @@ private:
 void LearnOOPS()
 {
 	// Class Object Test
-	//ClassObjectTest();
+	ClassObjectTest();
 	//InheritanceTest();
-	PolymorphismTest();
+	//PolymorphismTest();
 }
 
 void ClassObjectTest()
 {
-	StudentClass student1(1, "Vibas"), student2(2, "Pinky");
+	// Create new objects of StudentClass
+	//StudentClass student1(1, "Vibas"), student2(2, "Pinky");
+	
+	// Set properties using methods
+	//student1.SetStudentAddress("Pune");
+	//student1.SetStudentAge(33);
+	//student2.SetStudentAddress("Mumbai");
+	//student2.SetStudentAge(23);
 
-	/*student1.StudentID = 1;
-	student1.StudentName = "Vibas";*/
-	student1.SetStudentAddress("Pune");
-	student1.SetStudentAge(33);
+	// Call static method of StudentClass
+	//StudentClass::PrintSchoolInfo();
+	
+	// Call public methods of student objects
+	//student1.PrintStudentInfo();
+	//student2.PrintStudentInfo();
 
-	/*student2.StudentID = 2;
-	student2.StudentName = "Pinky";*/
-	student2.SetStudentAddress("Mumbai");
-	student2.SetStudentAge(23);
+	// ----------- USE OF POINTERS TO CLASS ----------- //
+	//Create a pointer to StudentClass
+	/*StudentClass* studentPointer;
+	* 
+	//Assign address of studen objects to this pointer
+	studentPointer = &student1;
+	//Call public methods via pointer
+	studentPointer->SetStudentAge(34);
+	studentPointer = &student2;
+	studentPointer->SetStudentAge(24);
 
+	cout << "After changing student data with pointer \n \n";
+
+	StudentClass::PrintSchoolInfo();
 	student1.PrintStudentInfo();
-	student2.PrintStudentInfo();
+	student2.PrintStudentInfo();*/
+
+	// ----------- NEW OBJECT PINTER -----------------//
+	//cout << "Create a new student object with pointer \n \n";
+	//
+	//// Create a new object of Student Class using pointer and new keyword
+	//StudentClass *studentPointer1 = new StudentClass(3, "Pointer Student");
+	//
+	//// Call public methods using pointer
+	//studentPointer1->SetStudentAge(25);
+	//studentPointer1->SetStudentAddress("Hyderabad");
+	//
+	//StudentClass::PrintSchoolInfo();
+	//studentPointer1->PrintStudentInfo();
+
+	//// Call to deconstructor for handling memory leak
+	//studentPointer1->~StudentClass();
+	// -------------------------------------------------//
+
+	// ------------- Memory Leak -----------------------//
+	while (1)
+	{
+		StudentClass StudentObj = StudentClass(1, "Test"); // This takes 600 KB memory
+		//StudentClass* StudenPointerObj = new StudentClass(1, "Test"); // This keeps increasing memory consumption
+		// Will learn about smart pointer
+	}
+	
+	// -------------------------------------------------//
 }
 
 void InheritanceTest()

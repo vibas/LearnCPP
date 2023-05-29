@@ -4,8 +4,8 @@
 
 int main()
 {
-	LearnBasics();
-	//LearnOOPS();
+	//LearnBasics();
+	LearnOOPS();
 	//LearnFileSystem();
 	return 0;
 }

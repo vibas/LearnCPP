@@ -26,7 +26,7 @@ struct Student
 	string gender;
 	string address;
 };
-void PrintStudent(Student student);
+void PrintStudent(struct Student student);
 
 void ReferenceTest();
 void PointerTest();

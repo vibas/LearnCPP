@@ -34,7 +34,7 @@ void LearnBasics()
 	//ArraysTest();
 
 	// Struct Test
-	//StructTest();
+	StructTest();
 
 	// Reference Test
 	//ReferenceTest();
@@ -50,7 +50,7 @@ void LearnBasics()
 
 	// Variadic Function Test
 	//TestVariadicFunction_AddNumbers(5,1,2,3,4,5);
-	TestVariadicFunction_AddNumbers_without_count(1, 2, 3, 4, 5,NULL);
+	//TestVariadicFunction_AddNumbers_without_count(1, 2, 3, 4, 5,NULL);
 }
 
 void PrintHelloWorld()
@@ -485,6 +485,18 @@ void StructTest()
 	s2.studentName = "Neha";
 	s2.gender = "Female";
 	s2.address = "Mumbai";
+
+	PrintStudent(s1);
+	PrintStudent(s2);
+
+	Student* sPointer;
+	sPointer = &s1;
+	sPointer->studentID = 10;
+
+	sPointer = &s2;
+	sPointer->studentID = 20;
+
+	cout << "After change through pointer \n\n";
 
 	PrintStudent(s1);
 	PrintStudent(s2);
