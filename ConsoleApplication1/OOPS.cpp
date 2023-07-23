@@ -58,6 +58,24 @@ StudentClass :: ~StudentClass()
 	cout << "Student Object Destroyed!" << endl;
 }
 // ============================================================================
+
+class SmartPointer
+{
+	StudentClass* student;
+public:
+	explicit SmartPointer(StudentClass* s = NULL)
+	{
+		student = s;
+	}
+	
+	~SmartPointer()
+	{
+		delete(student);
+	}
+
+	// Overloading dereferencing operator
+	StudentClass& operator*() { return *student; }
+};
 #pragma endregion
 
 #pragma region Inheritance
@@ -313,9 +331,10 @@ void ClassObjectTest()
 	// ------------- Memory Leak -----------------------//
 	while (1)
 	{
-		StudentClass StudentObj = StudentClass(1, "Test"); // This takes 600 KB memory
+		//StudentClass StudentObj = StudentClass(1, "Test"); // This takes 600 KB memory
 		//StudentClass* StudenPointerObj = new StudentClass(1, "Test"); // This keeps increasing memory consumption
-		// Will learn about smart pointer
+		// Smart Pointer
+		SmartPointer ptr(new StudentClass(1, "Test"));
 	}
 	
 	// -------------------------------------------------//
