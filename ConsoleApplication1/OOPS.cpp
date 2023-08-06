@@ -61,8 +61,8 @@ StudentClass :: ~StudentClass()
 
 class SmartPointer
 {
-	StudentClass* student;
 public:
+	StudentClass* student;
 	explicit SmartPointer(StudentClass* s = NULL)
 	{
 		student = s;
@@ -74,7 +74,7 @@ public:
 	}
 
 	// Overloading dereferencing operator
-	StudentClass& operator*() { return *student; }
+	//StudentClass& operator*() { return *student; }
 };
 #pragma endregion
 
@@ -335,6 +335,7 @@ void ClassObjectTest()
 		//StudentClass* StudenPointerObj = new StudentClass(1, "Test"); // This keeps increasing memory consumption
 		// Smart Pointer
 		SmartPointer ptr(new StudentClass(1, "Test"));
+		ptr.student->PrintStudentInfo();
 	}
 	
 	// -------------------------------------------------//
