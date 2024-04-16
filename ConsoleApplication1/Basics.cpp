@@ -1,6 +1,8 @@
 
 #include "Basics.h"
 
+int number = 10;
+
 void LearnBasics()
 {
 	// Print Hello World
@@ -16,7 +18,7 @@ void LearnBasics()
 	//UserInput();
 
 	// Operators
-	//Operators();
+	Operators();
 
 	// Strings
 	//StringTest();
@@ -34,7 +36,7 @@ void LearnBasics()
 	//ArraysTest();
 
 	// Struct Test
-	StructTest();
+	//StructTest();
 
 	// Reference Test
 	//ReferenceTest();
@@ -141,6 +143,18 @@ void Operators()
 	cout << "flag1 && flag2 = " << (flag1 && flag2 ? "True" : "False") << endl;
 	cout << "flag1 || flag2 = " << (flag1 || flag2 ? "True" : "False") << endl;
 	cout << "!(flag1 || flag2) = " << (!(flag1 || flag2) ? "True" : "False") << endl;
+
+	// Scope resolution operator ::
+	int number = 20;
+	cout << "Local Number = " << number << " Global number = " << ::number << endl;
+	::number = 100;
+	cout << "Local Number = " << number << " Global number = " << ::number << endl;
+	// Scope Starts
+	{
+		int number = 30;
+		cout << "Inside Scope Number = " << number << " Global number = " << ::number << endl; // :: takes global variable
+	}
+	// Scope Ends
 }
 
 void StringTest()
