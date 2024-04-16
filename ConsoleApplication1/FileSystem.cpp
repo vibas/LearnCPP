@@ -1,4 +1,5 @@
 #include "FileSystem.h"
+#include<iostream>
 
 void LearnFileSystem()
 {
@@ -8,6 +9,12 @@ void LearnFileSystem()
 
 void CreateAndWriteFile()
 {
+	ifstream localFile("Test.txt");
+	if (localFile.is_open()) {
+		cout << "File exists!!" << endl;
+		return;
+	}
+
 	// Create fstream object with file name - Open file 
 	ofstream myFile("Test.txt");
 
@@ -24,15 +31,15 @@ void ReadFile()
 	string myText;
 
 	// Read from the text file
-	ifstream MyReadFile("Test.txt");
+	ifstream myFile("Test.txt");
 
 	// Use a while loop together with the getline() function to read the file line by line
-	while (getline(MyReadFile, myText))
+	while (getline(myFile, myText))
 	{
 		// Output the text from the file
 		cout << myText << endl;
 	}
 
 	// Close the file
-	MyReadFile.close();
+	myFile.close();
 }

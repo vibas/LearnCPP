@@ -5,7 +5,7 @@
 int main()
 {
 	//LearnBasics();
-	LearnOOPS();
-	//LearnFileSystem();
+	//LearnOOPS();
+	LearnFileSystem();
 	return 0;
 }
