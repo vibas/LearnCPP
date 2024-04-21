@@ -6,8 +6,8 @@
 int main()
 {
 	//LearnBasics();
-	//LearnArray();
+	LearnArray();
 	//LearnOOPS();
-	LearnFileSystem();
+	//LearnFileSystem();
 	return 0;
 }

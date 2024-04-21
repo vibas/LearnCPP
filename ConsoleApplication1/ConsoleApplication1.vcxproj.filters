@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Array">
+      <UniqueIdentifier>{33f555d4-8434-4cbc-8b28-e1c5663efacd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Arrays">
+      <UniqueIdentifier>{9f3216b5-7599-4e79-9d73-d2dc7444ec71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp">
@@ -27,8 +33,14 @@
     <ClCompile Include="FileSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BattleShipsGame.cpp">
+      <Filter>Source Files\Array</Filter>
+    </ClCompile>
     <ClCompile Include="ArrayTest.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayBasics.cpp">
+      <Filter>Source Files\Array</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -41,8 +53,14 @@
     <ClInclude Include="FileSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="BattleShipsGame.h">
+      <Filter>Header Files\Arrays</Filter>
+    </ClInclude>
     <ClInclude Include="ArrayTest.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayBasics.h">
+      <Filter>Header Files\Arrays</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

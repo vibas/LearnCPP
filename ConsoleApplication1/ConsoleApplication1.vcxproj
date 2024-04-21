@@ -139,15 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayBasics.cpp" />
     <ClCompile Include="ArrayTest.cpp" />
     <ClCompile Include="Basics.cpp" />
+    <ClCompile Include="BattleShipsGame.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="OOPS.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayBasics.h" />
     <ClInclude Include="ArrayTest.h" />
     <ClInclude Include="Basics.h" />
+    <ClInclude Include="BattleShipsGame.h" />
     <ClInclude Include="FileSystem.h" />
     <ClInclude Include="OOPS.h" />
   </ItemGroup>
