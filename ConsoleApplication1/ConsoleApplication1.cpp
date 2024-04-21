@@ -1,11 +1,13 @@
 #include "Basics.h"
+#include "ArrayTest.h"
 #include "OOPS.h"
 #include "FileSystem.h"
 
 int main()
 {
-	LearnBasics();
+	//LearnBasics();
+	//LearnArray();
 	//LearnOOPS();
-	//LearnFileSystem();
+	LearnFileSystem();
 	return 0;
 }

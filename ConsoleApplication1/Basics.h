@@ -13,10 +13,8 @@ void UserInput();
 void Operators();
 void StringTest();
 void MathTest();
-void ArraysTest();
 void ConditionTest();
 void LoopTest();
-void PrintShips(bool ships[4][4]);
 
 void StructTest();
 struct Student
