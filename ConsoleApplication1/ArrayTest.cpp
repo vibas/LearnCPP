@@ -8,6 +8,8 @@ void LearnArray()
 	//IntegerArray();
 	//TwoDimensionalArray();
 	//ThreeDimensionalArray();
+	//LinearSearchFromArray();
+	BinarySearchFromArray();
 
-	BattleShipsGame();
+	//BattleShipsGame();
 }

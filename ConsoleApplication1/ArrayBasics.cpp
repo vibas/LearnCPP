@@ -92,3 +92,71 @@ void ThreeDimensionalArray()
 		cout << endl << "---------------------------" << endl;
 	}
 }
+
+void LinearSearchFromArray()
+{
+	int numbers[] = { 1,2,20,45,5,6,27,78,99,101 };
+	int numbersArrayLength = sizeof(numbers) / sizeof(int);
+	for (int n : numbers)
+	{
+		cout << n << " ";
+	}
+
+	int numberToSearch;
+	cout << "\n Enter Number to search from array "; 
+	cin >> numberToSearch;
+	cout << endl;
+	bool numberFoundinArray = false;
+	for (int i = 0; i < numbersArrayLength; i++)
+	{
+		if (numbers[i] == numberToSearch)
+		{
+			cout << numberToSearch << " Found at index " << i << endl;
+			numberFoundinArray = true;
+			break;
+		}
+	}
+	if(!numberFoundinArray)
+		cout << numberToSearch << " was not found in the Array";
+}
+
+void BinarySearchFromArray()
+{
+	int numbers[] = { 1,2,5,6,20,27,45,78,99,101 };	// Must be a sorted array
+
+	int numbersArrayLength = sizeof(numbers) / sizeof(int);
+	for (int n : numbers)
+	{
+		cout << n << " ";
+	}
+
+	int numberToSearch;
+	cout << "\n Enter Number to search from array ";
+	cin >> numberToSearch;
+	cout << endl;
+	
+	int min = 0, max = numbersArrayLength - 1;
+	int mid = 0;
+	bool numberFoundinArray = false;
+	while (min <= max)
+	{
+		mid = (min + max) / 2;
+		if (numbers[mid] == numberToSearch)
+		{
+			cout << numberToSearch << " found at index " << mid;
+			numberFoundinArray = true;
+			break;
+		}
+		else if (numberToSearch > numbers[mid])
+		{
+			min = mid + 1;
+		}
+		else
+		{
+			max = mid - 1;
+		}
+	}
+	if (!numberFoundinArray)
+		cout << numberToSearch << " was not found in the Array";
+	
+}

@@ -6,3 +6,6 @@ void StringArray();
 void IntegerArray();
 void TwoDimensionalArray();
 void ThreeDimensionalArray();
+
+void LinearSearchFromArray();
+void BinarySearchFromArray();
