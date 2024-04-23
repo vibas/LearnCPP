@@ -6,7 +6,7 @@ int number = 10;
 void LearnBasics()
 {
 	// Print Hello World
-	PrintHelloWorld();
+	//PrintHelloWorld();
 
 	// Variables
 	//Variables();
@@ -36,7 +36,7 @@ void LearnBasics()
 	//StructTest();
 
 	// Reference Test
-	//ReferenceTest();
+	ReferenceTest();
 
 	// Pointer Test
 	//PointerTest();
@@ -365,13 +365,106 @@ void PrintStudent(Student student)
 	cout << "ADDRESS : " << student.address << endl;
 }
 
+struct employee
+{
+	string name;
+	int age;
+	float salary;
+
+	void printInfo()
+	{
+		cout << name << "----" << age << "----" << salary << endl;
+	}
+};
+
+void ModifyStructByPointer(employee *e)
+{
+	e->name = "Vibas";
+	e->age = 34;
+	e->salary = 10000;
+}
+
+void ModifyStructByReference(employee& e)
+{
+	e.name = "Ram";
+	e.age = 32;
+	e.salary = 12000;
+}
+
+void Swap_variables(int i, int j)
+{
+	int temp = i;
+	i = j;
+	j = temp;
+}
+
+void Swap_pointers(int *p1, int *p2)
+{
+	int temp = *p1;
+	*p1 = *p2;
+	*p2 = temp;
+}
+
+void Swap_references(int& r1, int& r2)
+{
+	int temp = r1;
+	r1 = r2;
+	r2 = temp;
+}
+
 void ReferenceTest()
 {
+	// Variable 1
 	string food = "Pizza";
-	string& meal = food;
+	// Variable 2
+	string fruit = "Mango";
+	// meal refers to variable 1 áddress
+	string& meal = food; // Assigned reference while declaration;
 
+	// Both food & meal has same value & address
 	cout << food << "\t" << meal << endl;
-	cout << &meal << endl;
+	cout << &meal << "\t" << &food << endl;
+
+	// Modify meal's value. It will change food's value as both are having same address
+	meal = "Burger";
+	cout << food << "\t" << meal << endl;
+	cout << &meal << "\t" << &food << endl;
+
+	// Trying to assign address of Variable 2.
+	// &meal = fruit; // This is not possible. Allowed only once at declaration time 
+	
+	// Assign fruit's value to meal is possible. Which will change both meal & food's value
+	// But food & fruit have different addresses respectively
+	meal = fruit;
+	cout << meal << "\t" << food << "\t" << fruit << endl;
+	cout << &meal << "\t" << &food << "\t" << &fruit << endl;
+
+	// Lets test swap functions using variable, pointers & references
+	int num1 = 5, num2 = 10;
+	Swap_variables(num1, num2);
+	cout << "After Swap Variable function : num1 = " << num1 << " num2 = " << num2 << endl;
+
+	num1 = 5, num2 = 10;
+	Swap_pointers(&num1, &num2);
+	cout << "After Swap Pointers function : num1 = " << num1 << " num2 = " << num2 << endl;
+
+	num1 = 5, num2 = 10;
+	Swap_references(num1, num2);
+	cout << "After Swap References function : num1 = " << num1 << " num2 = " << num2 << endl;
+
+	// Lets try to modify a struct with pointer & reference 
+	employee e1 = { "abc", 32, 45000 };
+	employee e2 = { "def", 28, 6000 };
+	e1.printInfo();
+	e2.printInfo();
+
+	// Try to modify with pointer
+	ModifyStructByPointer(&e1);
+	e1.printInfo();
+	
+	// Try to modify with reference
+	ModifyStructByReference(e2);
+	e2.printInfo();
 }
 
 void PointerTest()
