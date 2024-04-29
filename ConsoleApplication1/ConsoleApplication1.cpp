@@ -2,12 +2,14 @@
 #include "ArrayTest.h"
 #include "OOPS.h"
 #include "FileSystem.h"
+#include "DataStructure.h"
 
 int main()
 {
-	LearnBasics();
+	//LearnBasics();
 	//LearnArray();
 	//LearnOOPS();
 	//LearnFileSystem();
+	LearnDataStructure();
 	return 0;
 }

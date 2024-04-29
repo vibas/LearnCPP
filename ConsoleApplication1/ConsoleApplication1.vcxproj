@@ -144,16 +144,22 @@
     <ClCompile Include="Basics.cpp" />
     <ClCompile Include="BattleShipsGame.cpp" />
     <ClCompile Include="ConsoleApplication1.cpp" />
+    <ClCompile Include="DataStructure.cpp" />
     <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="OOPS.cpp" />
+    <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayBasics.h" />
     <ClInclude Include="ArrayTest.h" />
     <ClInclude Include="Basics.h" />
     <ClInclude Include="BattleShipsGame.h" />
+    <ClInclude Include="DataStructure.h" />
     <ClInclude Include="FileSystem.h" />
     <ClInclude Include="OOPS.h" />
+    <ClInclude Include="Queue.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,6 +19,12 @@
     <Filter Include="Header Files\Arrays">
       <UniqueIdentifier>{9f3216b5-7599-4e79-9d73-d2dc7444ec71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\DSA">
+      <UniqueIdentifier>{1bfec040-c3e5-4ae6-8e4d-1ce56323473a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DSA">
+      <UniqueIdentifier>{ecf378f7-087f-45c9-8e37-1500e6a8fef0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp">
@@ -42,6 +48,15 @@
     <ClCompile Include="ArrayBasics.cpp">
       <Filter>Source Files\Array</Filter>
     </ClCompile>
+    <ClCompile Include="DataStructure.cpp">
+      <Filter>Source Files\DSA</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Source Files\DSA</Filter>
+    </ClCompile>
+    <ClCompile Include="Queue.cpp">
+      <Filter>Source Files\DSA</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basics.h">
@@ -61,6 +76,15 @@
     </ClInclude>
     <ClInclude Include="ArrayBasics.h">
       <Filter>Header Files\Arrays</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure.h">
+      <Filter>Header Files\DSA</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>Header Files\DSA</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>Header Files\DSA</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
